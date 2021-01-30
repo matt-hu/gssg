@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 #include "savefunctions.h"
 
@@ -15,8 +16,23 @@ int main(int argc, char *argv[]){
         }
         if (command == "init"){
             init();
+        } else if (command == "save"){
+            save();
+        } else if (command == "--help" || command == "-h"){
+            if (argc > 2) {
+                /*stringstream stream;
+                string output;
+                stream << argv[3];
+                stream >> output;
+                cout << output;*/
+                string output = argv[3];
+
+//                help(output);
+                help(argv[3]);               
+            } else {
+                help();
+            }
         }
     }
     return 0;
 }
-
